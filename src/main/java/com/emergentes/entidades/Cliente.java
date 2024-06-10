@@ -5,6 +5,7 @@
 package com.emergentes.entidades;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
@@ -64,6 +65,12 @@ public class Cliente implements Serializable {
     private List<Compra> compraList;
 
     public Cliente() {
+        this.id = 0;
+        this.nombres = "";
+        this.apellidos = "";
+        this.correo = "";
+        this.celular = 0;
+        compraList = new ArrayList<Compra>();
     }
 
     public Cliente(Integer id) {
@@ -150,5 +157,5 @@ public class Cliente implements Serializable {
     public String toString() {
         return "com.emergentes.entidades.Cliente[ id=" + id + " ]";
     }
-    
+
 }

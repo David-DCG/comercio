@@ -5,6 +5,7 @@
 package com.emergentes.entidades;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
@@ -76,6 +77,14 @@ public class Componente implements Serializable {
     private List<Ventas> ventasList;
 
     public Componente() {
+        this.id = 0;
+        this.nombre = "";
+        this.tipo = "";
+        this.marca = "";
+        this.descripcion = "";
+        this.precio = 0;
+        this.ruta = "";
+        ventasList = new ArrayList<Ventas>();
     }
 
     public Componente(Integer id) {
@@ -187,5 +196,5 @@ public class Componente implements Serializable {
     public String toString() {
         return "com.emergentes.entidades.Componente[ id=" + id + " ]";
     }
-    
+
 }

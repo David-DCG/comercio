@@ -53,6 +53,11 @@ public class Ventas implements Serializable {
     private Usuario idUsr;
 
     public Ventas() {
+        this.id = 0;
+        this.fecha = "";
+        this.idCom = new Componente();
+        this.idPer = new Periferico();
+        this.idUsr = new Usuario();
     }
 
     public Ventas(Integer id) {
@@ -128,5 +133,5 @@ public class Ventas implements Serializable {
     public String toString() {
         return "com.emergentes.entidades.Ventas[ id=" + id + " ]";
     }
-    
+
 }

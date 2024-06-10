@@ -5,6 +5,7 @@
 package com.emergentes.entidades;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
@@ -76,6 +77,15 @@ public class Periferico implements Serializable {
     private List<Ventas> ventasList;
 
     public Periferico() {
+        this.id = 0;
+        this.nombre = "";
+        this.tipo = "";
+        this.marca = "";
+        this.descripcion = "";
+        this.precio = 0;
+        this.ruta = "";
+        compraList = new ArrayList<Compra>();
+        ventasList = new ArrayList<Ventas>();
     }
 
     public Periferico(Integer id) {
@@ -187,5 +197,5 @@ public class Periferico implements Serializable {
     public String toString() {
         return "com.emergentes.entidades.Periferico[ id=" + id + " ]";
     }
-    
+
 }

@@ -53,6 +53,11 @@ public class Compra implements Serializable {
     private Periferico idPer;
 
     public Compra() {
+        this.id = 0;
+        this.fecha = "";
+        this.idCli = new Cliente();
+        this.idCom = new Componente();
+        this.idPer = new Periferico();
     }
 
     public Compra(Integer id) {
@@ -128,5 +133,5 @@ public class Compra implements Serializable {
     public String toString() {
         return "com.emergentes.entidades.Compra[ id=" + id + " ]";
     }
-    
+
 }
