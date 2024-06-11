@@ -84,6 +84,7 @@ public class Componente implements Serializable {
         this.descripcion = "";
         this.precio = 0;
         this.ruta = "";
+        compraList = new ArrayList<Compra>();
         ventasList = new ArrayList<Ventas>();
     }
 
