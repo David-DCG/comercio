@@ -11,11 +11,11 @@
     </head>
     <body>
         <jsp:include page="menu.jsp">
-            <jsp:param name="opcion" value="componentes"/>
+            <jsp:param name="opcion" value="perifericos"/>
         </jsp:include>
         <div class="container ">
-            <h1 class="text-center">Lista de Componentes</h1>
-            <a class="btn btn-primary btn-sm" href="MainComponente?action=add"><i class="bi bi-plus-circle"></i> Nuevo</a>
+            <h1 class="text-center">Lista de Perifericos</h1>
+            <a class="btn btn-primary btn-sm" href="MainPeriferico?action=add"><i class="bi bi-plus-circle"></i> Nuevo</a>
             <br>
             <br>
             <table class="table table-hover table-bordered">
@@ -30,7 +30,7 @@
                     <th></th>
                     <th></th>
                 </tr>
-                <c:forEach var="item" items="${componentes}">
+                <c:forEach var="item" items="${perifericos}">
                     <tr class="table-success">
                         <td>${item.id}</td>
                         <td>${item.nombre}</td>
@@ -39,8 +39,8 @@
                         <td>${item.descripcion}</td>
                         <td>${item.precio}</td>
                         <td>${item.ruta}</td>
-                        <td><a class="btn btn-warning" href="MainComponente?action=edit&id=${item.id}"><i class="bi bi-pencil-square"></i></a></td>
-                        <td><a class="btn btn-danger" href="MainComponente?action=delete&id=${item.id}" onclick="return(confirm('Esta seguro de eliminar?'))"><i class="bi bi-trash3"></i></a></td>
+                        <td><a class="btn btn-warning" href="MainPeriferico?action=edit&id=${item.id}"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a class="btn btn-danger" href="MainPeriferico?action=delete&id=${item.id}" onclick="return(confirm('Esta seguro de eliminar?'))"><i class="bi bi-trash3"></i></a></td>
                     </tr>
                 </c:forEach>
             </table>

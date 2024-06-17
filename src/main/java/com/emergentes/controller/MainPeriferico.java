@@ -1,7 +1,7 @@
 package com.emergentes.controller;
 
-import com.emergentes.bean.BeanComponente;
-import com.emergentes.entidades.Componente;
+import com.emergentes.bean.BeanPeriferico;
+import com.emergentes.entidades.Periferico;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -11,38 +11,38 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "MainComponente", urlPatterns = {"/MainComponente"})
-public class MainComponente extends HttpServlet {
+@WebServlet(name = "MainPeriferico", urlPatterns = {"/MainPeriferico"})
+public class MainPeriferico extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
-            BeanComponente dao = new BeanComponente();
+            BeanPeriferico dao = new BeanPeriferico();
             Integer id;
-            Componente com = new Componente();
+            Periferico per = new Periferico();
             String action = (request.getParameter("action") != null) ? request.getParameter("action") : "view";
             switch (action) {
                 case "add":
-                    request.setAttribute("componente", com);
-                    request.getRequestDispatcher("formcomponente.jsp").forward(request, response);
+                    request.setAttribute("periferico", per);
+                    request.getRequestDispatcher("formperiferico.jsp").forward(request, response);
                     break;
                 case "edit":
                     id = Integer.parseInt(request.getParameter("id"));
-                    com = dao.buscar(id);
-                    System.out.println(com);
-                    request.setAttribute("componente", com);
-                    request.getRequestDispatcher("formcomponente.jsp").forward(request, response);
+                    per = dao.buscar(id);
+                    System.out.println(per);
+                    request.setAttribute("periferico", per);
+                    request.getRequestDispatcher("formperiferico.jsp").forward(request, response);
                     break;
                 case "delete":
                     id = Integer.parseInt(request.getParameter("id"));
                     dao.eliminar(id);
-                    response.sendRedirect(request.getContextPath() + "/MainComponente");
+                    response.sendRedirect(request.getContextPath() + "/MainPeriferico");
                     break;
                 case "view":
-                    List<Componente> lista = dao.listartodos();
-                    request.setAttribute("componentes", lista);
-                    request.getRequestDispatcher("componentes.jsp").forward(request, response);
+                    List<Periferico> lista = dao.listartodos();
+                    request.setAttribute("perifericos", lista);
+                    request.getRequestDispatcher("perifericos.jsp").forward(request, response);
                 default:
                     break;
             }
@@ -62,28 +62,28 @@ public class MainComponente extends HttpServlet {
         String descripcion = request.getParameter("descripcion");
         double precio = Double.parseDouble(request.getParameter("precio"));
         String ruta = request.getParameter("ruta");
-        Componente com = new Componente();
-        com.setId(id);
-        com.setNombre(nombre);
-        com.setTipo(tipo);
-        com.setMarca(marca);
-        com.setDescripcion(descripcion);
-        com.setPrecio(precio);
-        com.setRuta(ruta);
+        Periferico per = new Periferico();
+        per.setId(id);
+        per.setNombre(nombre);
+        per.setTipo(tipo);
+        per.setMarca(marca);
+        per.setDescripcion(descripcion);
+        per.setPrecio(precio);
+        per.setRuta(ruta);
         if (id == 0) {
             try {
-                BeanComponente dao = new BeanComponente();
-                dao.insertar(com);
-                response.sendRedirect(request.getContextPath() + "/MainComponente");
+                BeanPeriferico dao = new BeanPeriferico();
+                dao.insertar(per);
+                response.sendRedirect(request.getContextPath() + "/MainPeriferico");
             } catch (Exception ex) {
                 System.out.println("Error" + ex.getMessage());
             }
 
         } else {
             try {
-                BeanComponente dao = new BeanComponente();
-                dao.editar(com);
-                response.sendRedirect(request.getContextPath() + "/MainComponente");
+                BeanPeriferico dao = new BeanPeriferico();
+                dao.editar(per);
+                response.sendRedirect(request.getContextPath() + "/MainPeriferico");
             } catch (Exception ex) {
                 System.out.println("Error" + ex.getMessage());
             }
