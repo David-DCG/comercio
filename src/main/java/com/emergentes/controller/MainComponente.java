@@ -103,5 +103,16 @@ public class MainComponente extends HttpServlet {
         } catch (Exception ex) {
             System.out.println("Error: " + ex.getMessage());
         }
+
+    }
+
+    private String getFileName(Part part) {
+        String contentDisposition = part.getHeader("content-disposition");
+        for (String content : contentDisposition.split(";")) {
+            if (content.trim().startsWith("filename")) {
+                return content.substring(content.indexOf('=') + 1).trim().replace("\"", "");
+            }
+        }
+        return null;
     }
 }

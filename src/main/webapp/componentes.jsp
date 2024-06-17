@@ -38,7 +38,7 @@
                         <td>${item.marca}</td>
                         <td>${item.descripcion}</td>
                         <td>${item.precio}</td>
-                        <td>${item.ruta}</td>
+                        <td><img src="${item.ruta}" height="100" width="100"></td>
                         <td><a class="btn btn-warning" href="MainComponente?action=edit&id=${item.id}"><i class="bi bi-pencil-square"></i></a></td>
                         <td><a class="btn btn-danger" href="MainComponente?action=delete&id=${item.id}" onclick="return(confirm('Esta seguro de eliminar?'))"><i class="bi bi-trash3"></i></a></td>
                     </tr>
