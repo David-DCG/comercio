@@ -22,7 +22,7 @@
                         Componentes
                     </div>
                     <div class="card-body">
-                        <form action="MainComponente" method="post">
+                        <form action="MainComponente" method="post" enctype="multipart/form-data">
                             <input type="hidden" name="id" value="${componente.id}">
                             <div class="mb-3">
                                 <label for="nombre" class="form-label">Nombre:</label>
@@ -44,10 +44,16 @@
                                 <label for="precio" class="form-label">Precio:</label>
                                 <input type="text" name="precio" id="precio" value="${componente.precio}" class="form-control" placeholder="Ingresar el precio">
                             </div>
+                            <%-- 
                             <div class="mb-3">
-                                <label for="ruta" class="form-label">ruta:</label>
-                                <input type="text" name="ruta" id="ruta" value="${componente.ruta}" class="form-control" placeholder="Ingresar la descripcion">
-                            </div>  
+                            <label for="ruta" class="form-label">ruta:</label>
+                            <input type="text" name="ruta" id="ruta" value="${componente.ruta}" class="form-control" placeholder="Ingresar la descripcion">
+                            </div>
+                            --%>
+                            <div class="mb-3">
+                                <label for="imagen" class="form-label">Imagen:</label>
+                                <input type="file" name="imagen" id="imagen" class="form-control">
+                            </div>
                             <button type="submit" class="btn btn-success"><i class="bi bi-floppy"> Enviar</i></button>
                             <a href="MainComponente" class="btn btn-info"><i class="bi bi-arrow-return-left"> Volver</i></a>
                         </form>
