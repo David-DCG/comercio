@@ -27,7 +27,13 @@
                     <a class="nav-link <%=(opcion.equals("componentes") ? "active" : "")%>" href="MainComponente">Componentes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link <%=(opcion.equals("perifericos") ? "active" : "")%>"" href="MainPeriferico">Perifericos</a>
+                    <a class="nav-link <%=(opcion.equals("perifericos") ? "active" : "")%>" href="MainPeriferico">Perifericos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link <%=(opcion.equals("ventas") ? "active" : "")%>" href="MainVenta">Ventas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link <%=(opcion.equals("compras") ? "active" : "")%>" href="MainCompra">Compras</a>
                 </li>
             </ul>
             <form class="d-flex">
