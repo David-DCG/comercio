@@ -1,3 +1,8 @@
+<%
+    if (session.getAttribute("logueado") != "OK") {
+        response.sendRedirect("login.jsp");
+    }
+%>
 <%@page import="com.emergentes.entidades.Cliente"%>
 <%
     Cliente cliente = (Cliente) request.getAttribute("cliente");

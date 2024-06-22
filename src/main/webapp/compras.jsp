@@ -1,3 +1,8 @@
+<%
+    if (session.getAttribute("logueado") != "OK") {
+        response.sendRedirect("login.jsp");
+    }
+%>
 <%@page import="com.emergentes.entidades.Compra"%>
 <%@page import="java.util.List"%>
 <%

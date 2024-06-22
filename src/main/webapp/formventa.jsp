@@ -1,3 +1,8 @@
+<%
+    if (session.getAttribute("logueado") != "OK") {
+        response.sendRedirect("login.jsp");
+    }
+%>
 <%@page import="com.emergentes.entidades.Periferico"%>
 <%@page import="com.emergentes.entidades.Componente"%>
 <%@page import="com.emergentes.entidades.Usuario"%>
