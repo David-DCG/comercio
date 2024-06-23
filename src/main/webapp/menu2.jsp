@@ -13,7 +13,8 @@
                     <a class="nav-link" href="#">Quienes Somos</a>
                 </li>
             </ul>
-            <a href="CarritoControlador?action=view" class="btn btn-outline-danger" ><i class="bi bi-cart4"><label style="color: orange"></label></i></a>
+            <a href="CarritoControlador?action=view" class="btn btn-outline-danger" ><i class="bi bi-cart4"></i> Carrito</a>
+            <a href="ClienteControlador?action=add" class="btn btn-outline-info">Registrar Cliente</a>
             <a href="LoginControlador" class="btn btn-outline-success">Iniciar Sesion</a>
         </div>
     </div>

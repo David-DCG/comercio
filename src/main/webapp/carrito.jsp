@@ -19,8 +19,11 @@
                         <tr>
                             <th>ID</th>
                             <th>Nombre</th>
+                            <th>Imagen</th>
+                            <th>Descripcion</th>
                             <th>Precio</th>
-                            <th>Acción</th>
+                            <th></th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -28,7 +31,12 @@
                             <tr>
                                 <td>${item.id}</td>
                                 <td>${item.nombre}</td>
+                                <td><img src="${item.ruta}" alt="${item.nombre}" width="100"></td>
+                                <td>${item.descripcion}</td>
                                 <td>${item.precio}</td>
+                                <td>
+                                    <a href="CompraControlador?action=add" class="btn btn-outline-success"><i class="bi bi-bag"></i> Comprar</a>
+                                </td>
                                 <td>
                                     <a href="CarritoControlador?action=remove&id=${item.id}" class="btn btn-outline-danger"><i class="bi bi-trash"></i> Quitar</a>
                                 </td>

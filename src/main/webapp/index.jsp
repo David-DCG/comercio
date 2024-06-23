@@ -28,7 +28,7 @@
                                 <br>
                                 <label class="h6">${item.descripcion}</label>
                                 <div>
-                                    <a href="CarritoControlador?action=add&id=${item.id}&nombre=${item.nombre}&precio=${item.precio}" class="btn btn-outline-info"><i class="bi bi-cart-plus"></i> Añadir</a>
+                                    <a href="CarritoControlador?action=add&id=${item.id}&nombre=${item.nombre}&ruta=${item.ruta}&descripcion=${item.descripcion}&precio=${item.precio}" class="btn btn-outline-info"><i class="bi bi-cart-plus"></i> Añadir</a>
                                 </div>
                             </div>
                         </div>
@@ -53,7 +53,7 @@
                                 <br>
                                 <label class="h6">${item.descripcion}</label>
                                 <div>
-                                    <a href="CarritoControlador?action=add&id=${item.id}&nombre=${item.nombre}&precio=${item.precio}" class="btn btn-outline-info"><i class="bi bi-cart-plus"></i> Añadir</a>
+                                    <a href="CarritoControlador?action=add&id=${item.id}&nombre=${item.nombre}&ruta=${item.ruta}&descripcion=${item.descripcion}&precio=${item.precio}" class="btn btn-outline-info"><i class="bi bi-cart-plus"></i> Añadir</a>
                                 </div>
                             </div>
                         </div>

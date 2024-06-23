@@ -14,27 +14,31 @@ import javax.servlet.http.HttpSession;
 
 @WebServlet(name = "CarritoControlador", urlPatterns = {"/CarritoControlador"})
 public class CarritoControlador extends HttpServlet {
-
+    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String action = request.getParameter("action");
         HttpSession session = request.getSession();
         List<Producto> carrito = (List<Producto>) session.getAttribute("carrito");
-
+        
         if (carrito == null) {
             carrito = new ArrayList<>();
         }
-
+        
         if (action != null) {
             switch (action) {
                 case "add":
                     int id = Integer.parseInt(request.getParameter("id"));
                     String nombre = request.getParameter("nombre");
+                    String ruta = request.getParameter("ruta");
+                    String descripcion = request.getParameter("descripcion");
                     double precio = Double.parseDouble(request.getParameter("precio"));
                     Producto producto = new Producto();
                     producto.setId(id);
                     producto.setNombre(nombre);
+                    producto.setRuta(ruta);
+                    producto.setDescripcion(descripcion);
                     producto.setPrecio(precio);
                     carrito.add(producto);
                     break;
@@ -54,11 +58,11 @@ public class CarritoControlador extends HttpServlet {
                     break;
             }
         }
-
+        
         session.setAttribute("carrito", carrito);
         response.sendRedirect("carrito.jsp");
     }
-
+    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
